@@ -49,69 +49,120 @@
     img{max-width:100%}
 
     .seo-h1{
-      position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+      position:absolute;
+      left:-9999px;
+      top:auto;
+      width:1px;
+      height:1px;
+      overflow:hidden;
     }
 
     .nav{
-      position:sticky;top:0;z-index:80;
+      position:sticky;
+      top:0;
+      z-index:80;
       background:rgba(3,9,20,.82);
       backdrop-filter:blur(18px);
       border-bottom:1px solid var(--line);
     }
     .nav-inner{
-      max-width:1280px;margin:auto;padding:12px 24px;
-      display:flex;justify-content:space-between;align-items:center;gap:22px;
+      max-width:1280px;
+      margin:auto;
+      padding:12px 24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:22px;
     }
     .brand{display:flex;align-items:center;gap:12px}
     .main-logo{
-      height:52px;width:auto;max-width:250px;object-fit:contain;
+      height:52px;
+      width:auto;
+      max-width:250px;
+      object-fit:contain;
       filter:drop-shadow(0 10px 24px rgba(0,0,0,.28));
       transition:.25s ease;
     }
     .main-logo:hover{transform:scale(1.025)}
-    .nav-links{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:14px;font-weight:650}
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      color:var(--muted);
+      font-size:14px;
+      font-weight:650;
+    }
     .nav-links a:hover{color:#fff}
 
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:13px 20px;border-radius:999px;font-weight:900;
-      border:1px solid var(--line);transition:.22s ease;white-space:nowrap;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:13px 20px;
+      border-radius:999px;
+      font-weight:900;
+      border:1px solid var(--line);
+      transition:.22s ease;
+      white-space:nowrap;
     }
     .btn:hover{transform:translateY(-2px)}
     .btn-primary{
       background:linear-gradient(135deg,var(--cyan),var(--blue));
-      color:#041020;border:0;box-shadow:0 18px 48px rgba(62,231,255,.22);
+      color:#041020;
+      border:0;
+      box-shadow:0 18px 48px rgba(62,231,255,.22);
     }
     .btn-ghost{background:rgba(255,255,255,.055);color:#fff}
 
     .container{max-width:1280px;margin:auto;padding-left:24px;padding-right:24px}
+
     .hero{
       position:relative;
       padding:76px 0 82px;
       overflow:hidden;
     }
     .hero:before{
-      content:"";position:absolute;inset:0;
+      content:"";
+      position:absolute;
+      inset:0;
       background:
         linear-gradient(90deg,rgba(3,9,20,.96) 0%,rgba(3,9,20,.86) 37%,rgba(3,9,20,.35) 100%),
         radial-gradient(circle at 74% 42%,rgba(62,231,255,.16),transparent 32%);
       pointer-events:none;
     }
     .hero-grid{
-      position:relative;z-index:2;
-      display:grid;grid-template-columns:.92fr 1.08fr;gap:58px;align-items:center;
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:58px;
+      align-items:center;
     }
     .eyebrow{
-      display:inline-flex;align-items:center;gap:10px;
-      color:#8ff4ff;font-size:13px;letter-spacing:1.8px;text-transform:uppercase;font-weight:850;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:#8ff4ff;
+      font-size:13px;
+      letter-spacing:1.8px;
+      text-transform:uppercase;
+      font-weight:850;
       margin-bottom:22px;
     }
     .eyebrow:before{content:"";width:28px;height:2px;background:var(--cyan);display:inline-block}
     .hero h1{
-      font-size:clamp(46px,6vw,88px);line-height:1.02;letter-spacing:-3px;margin:0 0 24px;
+      font-size:clamp(46px,6vw,88px);
+      line-height:1.02;
+      letter-spacing:-3px;
+      margin:0 0 24px;
       text-wrap:balance;
     }
-    .gradient{background:linear-gradient(135deg,#58f1ff,var(--blue),#b7d0ff);-webkit-background-clip:text;color:transparent}
+    .gradient{
+      background:linear-gradient(135deg,#58f1ff,var(--blue),#b7d0ff);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
     .lead{font-size:20px;color:var(--muted);max-width:650px;margin:0 0 30px}
     .actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
 
@@ -148,9 +199,15 @@
     }
 
     .metrics-band{
-      position:relative;z-index:3;margin-top:34px;
-      display:grid;grid-template-columns:repeat(5,1fr);gap:0;
-      border:1px solid var(--line);border-radius:26px;overflow:hidden;
+      position:relative;
+      z-index:3;
+      margin-top:34px;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:0;
+      border:1px solid var(--line);
+      border-radius:26px;
+      overflow:hidden;
       background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
       box-shadow:0 20px 70px rgba(0,0,0,.22);
     }
@@ -162,10 +219,20 @@
     .section{padding:88px 0}
     .section.compact{padding-top:46px}
     .section-kicker{
-      color:var(--cyan);font-size:13px;letter-spacing:1.8px;text-transform:uppercase;font-weight:900;margin-bottom:12px;
+      color:var(--cyan);
+      font-size:13px;
+      letter-spacing:1.8px;
+      text-transform:uppercase;
+      font-weight:900;
+      margin-bottom:12px;
     }
     .section-head{max-width:820px;margin-bottom:34px}
-    .section-head h2{font-size:clamp(34px,4.4vw,60px);line-height:1.08;letter-spacing:-1.8px;margin:0 0 14px}
+    .section-head h2{
+      font-size:clamp(34px,4.4vw,60px);
+      line-height:1.08;
+      letter-spacing:-1.8px;
+      margin:0 0 14px;
+    }
     .section-head p{font-size:18px;color:var(--muted);margin:0}
 
     .profile-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:stretch}
@@ -187,39 +254,58 @@
       display:block;
       filter:saturate(1.05) contrast(1.03);
     }
-    .profile-photo:after{display:none}
     .profile-caption{
       position:relative;
-      left:auto;
-      right:auto;
-      bottom:auto;
       z-index:2;
       padding:24px;
-      border-radius:0;
       background:rgba(3,9,20,.82);
       border-top:1px solid var(--line);
       backdrop-filter:blur(14px);
     }
-    .profile-caption h3{margin:0 0 6px;font-size:24px}.profile-caption p{margin:0;color:var(--muted)}
+    .profile-caption h3{margin:0 0 6px;font-size:24px}
+    .profile-caption p{margin:0;color:var(--muted)}
+
     .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{
       background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
-      border:1px solid var(--line);border-radius:var(--radius);padding:28px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:28px;
       box-shadow:0 18px 54px rgba(0,0,0,.18);
     }
-    .tag{display:inline-flex;padding:6px 12px;border-radius:999px;background:rgba(62,231,255,.10);border:1px solid rgba(62,231,255,.22);color:#9ef7ff;font-weight:850;font-size:13px;margin-bottom:14px}
-    .card h3{font-size:23px;margin:0 0 10px}.card p,.card li{color:var(--muted);margin:0}.card ul{padding-left:18px;margin-top:12px}
+    .tag{
+      display:inline-flex;
+      padding:6px 12px;
+      border-radius:999px;
+      background:rgba(62,231,255,.10);
+      border:1px solid rgba(62,231,255,.22);
+      color:#9ef7ff;
+      font-weight:850;
+      font-size:13px;
+      margin-bottom:14px;
+    }
+    .card h3{font-size:23px;margin:0 0 10px}
+    .card p,.card li{color:var(--muted);margin:0}
+    .card ul{padding-left:18px;margin-top:12px}
 
     .quote-panel{
-      display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:24px;
+      align-items:center;
       background:linear-gradient(135deg,rgba(62,231,255,.12),rgba(65,135,255,.10));
-      border:1px solid rgba(62,231,255,.20);border-radius:40px;padding:34px;box-shadow:var(--shadow);
+      border:1px solid rgba(62,231,255,.20);
+      border-radius:40px;
+      padding:34px;
+      box-shadow:var(--shadow);
     }
     .quote-panel img{width:100%;height:420px;object-fit:cover;border-radius:30px;border:1px solid var(--line)}
-    .quote{font-size:clamp(31px,4vw,56px);line-height:1.12;letter-spacing:-1.6px;font-weight:1000;margin:0 0 18px}.quote span{color:var(--cyan)}
+    .quote{font-size:clamp(31px,4vw,56px);line-height:1.12;letter-spacing:-1.6px;font-weight:1000;margin:0 0 18px}
+    .quote span{color:var(--cyan)}
 
     .research-section{
-      position:relative;padding:94px 0 98px;
+      position:relative;
+      padding:94px 0 98px;
       background:
         radial-gradient(circle at 76% 18%,rgba(65,135,255,.18),transparent 34%),
         linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.035));
@@ -227,18 +313,30 @@
       border-bottom:1px solid rgba(255,255,255,.06);
     }
     .research-section:before{
-      content:"";position:absolute;top:100px;right:0;width:58%;height:280px;
+      content:"";
+      position:absolute;
+      top:100px;
+      right:0;
+      width:58%;
+      height:280px;
       background:radial-gradient(ellipse at center,rgba(62,231,255,.12),transparent 70%);
-      opacity:.9;pointer-events:none;
+      opacity:.9;
+      pointer-events:none;
     }
     .research-grid{
-      position:relative;z-index:2;
-      display:grid;grid-template-columns:repeat(5,1fr);gap:18px;
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:18px;
     }
     .research-card{
       min-height:510px;
-      display:flex;flex-direction:column;justify-content:space-between;
-      padding:24px;border-radius:26px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      padding:24px;
+      border-radius:26px;
       background:linear-gradient(180deg,rgba(255,255,255,.082),rgba(255,255,255,.035));
       border:1px solid rgba(255,255,255,.13);
       box-shadow:0 20px 68px rgba(0,0,0,.22);
@@ -253,34 +351,104 @@
 
     .timeline{display:grid;gap:14px}
     .project{display:grid;grid-template-columns:1.2fr .55fr .55fr;gap:14px;align-items:center;padding:19px 22px;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid var(--line)}
-    .project strong{color:#fff}.project span{color:var(--muted)}
+    .project strong{color:#fff}
+    .project span{color:var(--muted)}
 
-    .pub-list{display:grid;gap:14px}.pub{padding:20px 22px;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid var(--line)}.pub strong{color:#fff}.pub em{font-style:normal;color:var(--cyan)}
+    .pub-list{display:grid;gap:14px}
+    .pub{padding:20px 22px;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid var(--line)}
+    .pub strong{color:#fff}
+    .pub em{font-style:normal;color:var(--cyan)}
 
     .capability-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .legacy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 
     .cta{
-      text-align:center;border-radius:44px;padding:60px 26px;
+      text-align:center;
+      border-radius:44px;
+      padding:60px 26px;
       background:
         radial-gradient(circle at 50% 0%,rgba(62,231,255,.24),transparent 45%),
         linear-gradient(135deg,rgba(62,231,255,.13),rgba(65,135,255,.16));
-      border:1px solid rgba(62,231,255,.22);box-shadow:var(--shadow);
+      border:1px solid rgba(62,231,255,.22);
+      box-shadow:var(--shadow);
     }
-    .cta h2{font-size:clamp(36px,4.5vw,64px);line-height:1.06;letter-spacing:-1.8px;margin:0 0 16px}.cta p{max-width:760px;margin:0 auto 26px;color:var(--muted);font-size:18px}
+    .cta h2{font-size:clamp(36px,4.5vw,64px);line-height:1.06;letter-spacing:-1.8px;margin:0 0 16px}
+    .cta p{max-width:760px;margin:0 auto 26px;color:var(--muted);font-size:18px}
 
     footer{border-top:1px solid var(--line);padding:36px 0 60px;color:var(--muted);font-size:14px}
     .footer-grid{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
 
-    .mobile-cta{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:90;gap:10px;padding:10px;background:rgba(3,9,20,.9);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:999px}.mobile-cta .btn{flex:1;padding:12px 10px;font-size:13px}
+    .mobile-cta{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:90;gap:10px;padding:10px;background:rgba(3,9,20,.9);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:999px}
+    .mobile-cta .btn{flex:1;padding:12px 10px;font-size:13px}
+
+    /* ===== World-class image lightbox ===== */
+    .clickable-image{cursor:zoom-in;transition:.25s ease}
+    .clickable-image:hover{transform:scale(1.018);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+    .lightbox{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:99999;
+      padding:34px;
+      background:rgba(0,0,0,.92);
+      backdrop-filter:blur(12px);
+    }
+    .lightbox.active{display:flex}
+    .lightbox img{
+      max-width:95vw;
+      max-height:90vh;
+      object-fit:contain;
+      border-radius:18px;
+      box-shadow:0 30px 90px rgba(0,0,0,.70);
+      animation:zoomIn .22s ease;
+      background:#fff;
+    }
+    .lightbox-close{
+      position:absolute;
+      top:18px;
+      right:30px;
+      color:#fff;
+      font-size:48px;
+      font-weight:300;
+      line-height:1;
+      cursor:pointer;
+      transition:.2s ease;
+      z-index:100000;
+    }
+    .lightbox-close:hover{color:var(--cyan);transform:scale(1.1)}
+    @keyframes zoomIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
 
     @media(max-width:1100px){
-      .nav-links{display:none}.hero-grid,.profile-grid,.quote-panel{grid-template-columns:1fr}.hero-logo-stage{min-height:360px;margin-right:0;border-radius:32px}.hero-logo-main{min-height:360px}.profile-photo{margin-top:0}.metrics-band{grid-template-columns:repeat(2,1fr)}.metric{border-bottom:1px solid var(--line)}.research-grid{grid-template-columns:1fr 1fr}.project{grid-template-columns:1fr}.capability-grid,.legacy-grid,.cards-3{grid-template-columns:1fr}.mobile-cta{display:flex}
-    }.hero-grid,.profile-grid,.quote-panel{grid-template-columns:1fr}.hero-logo-stage{min-height:auto}.profile-photo{margin-top:0}.metrics-band{grid-template-columns:repeat(2,1fr)}.metric{border-bottom:1px solid var(--line)}.research-grid{grid-template-columns:1fr 1fr}.project{grid-template-columns:1fr}.capability-grid,.legacy-grid,.cards-3{grid-template-columns:1fr}.mobile-cta{display:flex}
+      .nav-links{display:none}
+      .hero-grid,.profile-grid,.quote-panel{grid-template-columns:1fr}
+      .hero-logo-stage{min-height:360px;margin-right:0;border-radius:32px}
+      .hero-logo-main{min-height:360px}
+      .profile-photo{margin-top:0}
+      .metrics-band{grid-template-columns:repeat(2,1fr)}
+      .metric{border-bottom:1px solid var(--line)}
+      .research-grid{grid-template-columns:1fr 1fr}
+      .project{grid-template-columns:1fr}
+      .capability-grid,.legacy-grid,.cards-3{grid-template-columns:1fr}
+      .mobile-cta{display:flex}
     }
+
     @media(max-width:700px){
-      .main-logo{height:44px}.hero{padding-top:48px}.hero h1{letter-spacing:-1.5px}.hero-logo-stage{min-height:260px;border-radius:24px}.hero-logo-main{min-height:260px}.research-grid{grid-template-columns:1fr}.research-card{min-height:auto}.metrics-band{grid-template-columns:1fr}.metric{border-right:0}.profile-photo img{height:360px}.quote-panel{padding:22px}.quote-panel img{height:280px}
-    }.hero{padding-top:48px}.hero h1{letter-spacing:-1.5px}.research-grid{grid-template-columns:1fr}.research-card{min-height:auto}.metrics-band{grid-template-columns:1fr}.metric{border-right:0}.profile-photo{min-height:430px}.quote-panel{padding:22px}.quote-panel img{height:280px}
+      .main-logo{height:44px}
+      .hero{padding-top:48px}
+      .hero h1{letter-spacing:-1.5px}
+      .hero-logo-stage{min-height:260px;border-radius:24px}
+      .hero-logo-main{min-height:260px}
+      .research-grid{grid-template-columns:1fr}
+      .research-card{min-height:auto}
+      .metrics-band{grid-template-columns:1fr}
+      .metric{border-right:0}
+      .profile-photo img{height:360px}
+      .quote-panel{padding:22px}
+      .quote-panel img{height:280px}
+      .lightbox{padding:18px}
+      .lightbox-close{top:12px;right:18px;font-size:40px}
     }
   </style>
 
@@ -330,7 +498,7 @@
           </div>
         </div>
         <div class="hero-logo-stage">
-          <img src="assets/logo/10_01_14.png" alt="LABZero brand identity wall" class="hero-logo-main">
+          <img src="assets/logo/10_01_14.png" alt="LABZero brand identity wall" class="hero-logo-main clickable-image">
         </div>
       </div>
       <div class="container">
@@ -347,7 +515,7 @@
     <section class="section" id="about">
       <div class="container profile-grid">
         <div class="profile-photo">
-          <img src="assets/prof-lu-intro.png" alt="Prof. Chih-Wei Lu and LABZero">
+          <img src="assets/prof-lu-intro.png" alt="Prof. Chih-Wei Lu and LABZero" class="clickable-image">
           <div class="profile-caption">
             <h3>Prof. Chih-Wei Lu｜LABZero Founder</h3>
             <p>Soil dynamics, liquefaction engineering, numerical modeling, and geo-hazard mitigation with international collaboration and real engineering impact.</p>
@@ -370,7 +538,7 @@
 
     <section class="section compact">
       <div class="container quote-panel">
-        <img src="assets/labzero-group-2026.png" alt="LABZero team and international guests">
+        <img src="assets/labzero-group-2026.png" alt="LABZero team and international guests" class="clickable-image">
         <div>
           <p class="quote">We do not only analyze hazards. <span>We translate science into decisions.</span></p>
           <p style="color:var(--muted);font-size:18px;margin:0">LABZero connects laboratory testing, theoretical modeling, numerical simulation, seismic signal interpretation, site investigation, and municipal-scale risk evaluation to support safer infrastructure and more resilient cities.</p>
@@ -402,23 +570,23 @@
         </div>
         <div class="research-grid">
           <article class="research-card">
-            <div><div class="research-num">01</div><h3>Building–soil interaction</h3><img src="assets/research/research-topic-1.png" alt="Building soil interaction"><p>Effective stress analysis of shallow-founded buildings in liquefiable soils under long-duration and sequential earthquakes.</p></div>
+            <div><div class="research-num">01</div><h3>Building–soil interaction</h3><img src="assets/research/research-topic-1.png" alt="Building soil interaction" class="clickable-image"><p>Effective stress analysis of shallow-founded buildings in liquefiable soils under long-duration and sequential earthquakes.</p></div>
             <a class="research-link" href="#projects">View Research →</a>
           </article>
           <article class="research-card">
-            <div><div class="research-num">02</div><h3>Manhole and pipeline uplift</h3><img src="assets/research/research-topic-2.png" alt="Manhole uplift"><p>Analytical models for liquefaction-induced uplift using variable viscosity and thixotropic-fluid concepts.</p></div>
+            <div><div class="research-num">02</div><h3>Manhole and pipeline uplift</h3><img src="assets/research/research-topic-2.png" alt="Manhole uplift" class="clickable-image"><p>Analytical models for liquefaction-induced uplift using variable viscosity and thixotropic-fluid concepts.</p></div>
             <a class="research-link" href="#projects">View Research →</a>
           </article>
           <article class="research-card">
-            <div><div class="research-num">03</div><h3>CTT and cyclic mobility</h3><img src="assets/research/research-topic-3.png" alt="Cyclic triaxial testing"><p>Cyclic triaxial testing, model calibration, and elemental simulation for liquefaction behavior.</p></div>
+            <div><div class="research-num">03</div><h3>CTT and cyclic mobility</h3><img src="assets/research/research-topic-3.png" alt="Cyclic triaxial testing" class="clickable-image"><p>Cyclic triaxial testing, model calibration, and elemental simulation for liquefaction behavior.</p></div>
             <a class="research-link" href="#projects">View Research →</a>
           </article>
           <article class="research-card">
-            <div><div class="research-num">04</div><h3>Liquefaction evaluation</h3><img src="assets/research/research-topic-4.png" alt="Liquefaction evaluation"><p>Supplementing JRA-style simplified methods with cyclic testing and Taiwan-specific geological evidence.</p></div>
+            <div><div class="research-num">04</div><h3>Liquefaction evaluation</h3><img src="assets/research/research-topic-4.png" alt="Liquefaction evaluation" class="clickable-image"><p>Supplementing JRA-style simplified methods with cyclic testing and Taiwan-specific geological evidence.</p></div>
             <a class="research-link" href="#projects">View Research →</a>
           </article>
           <article class="research-card">
-            <div><div class="research-num">05</div><h3>Lattice-shaped improvement</h3><img src="assets/research/research-topic-5.png" alt="Lattice-shaped ground improvement"><p>Grid-type improved walls, shear stress reduction, replacement ratio, numerical modeling, and design-oriented simplified assessment.</p></div>
+            <div><div class="research-num">05</div><h3>Lattice-shaped improvement</h3><img src="assets/research/research-topic-5.png" alt="Lattice-shaped ground improvement" class="clickable-image"><p>Grid-type improved walls, shear stress reduction, replacement ratio, numerical modeling, and design-oriented simplified assessment.</p></div>
             <a class="research-link" href="#projects">View Research →</a>
           </article>
         </div>
@@ -515,6 +683,40 @@
       <div>Research · Innovation · Impact</div>
     </div>
   </footer>
+
+  <div class="lightbox" id="lightbox" aria-label="Expanded research image viewer">
+    <span class="lightbox-close" id="lightboxClose" aria-label="Close image viewer">&times;</span>
+    <img id="lightboxImg" src="" alt="Expanded LABZero image">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.clickable-image').forEach((img) => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || 'Expanded LABZero image';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox(){
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (event) => {
+      if(event.target === lightbox){closeLightbox();}
+    });
+    document.addEventListener('keydown', (event) => {
+      if(event.key === 'Escape' && lightbox.classList.contains('active')){closeLightbox();}
+    });
+  </script>
 
   <!--
   Required asset paths:
