@@ -54,12 +54,13 @@
     }
     .main-logo:hover{transform:scale(1.02)}
     .hero-logo-panel{
-      margin-bottom:28px;
-      padding:16px;
-      border-radius:30px;
-      background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.045));
-      border:1px solid rgba(255,255,255,.16);
-      box-shadow:0 24px 70px rgba(0,0,0,.26);
+      width:min(980px,calc(100vw - 44px));
+      margin-bottom:30px;
+      padding:10px;
+      border-radius:34px;
+      background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.045));
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:0 32px 90px rgba(0,0,0,.32);
       position:relative;
       overflow:hidden;
     }
@@ -67,30 +68,20 @@
       content:"";
       position:absolute;
       inset:-1px;
-      background:radial-gradient(circle at 18% 0%,rgba(62,231,255,.25),transparent 34%),radial-gradient(circle at 92% 8%,rgba(247,199,107,.16),transparent 28%);
+      background:radial-gradient(circle at 18% 0%,rgba(62,231,255,.24),transparent 34%),radial-gradient(circle at 92% 8%,rgba(247,199,107,.14),transparent 28%);
       pointer-events:none;
     }
     .hero-logo{
       position:relative;
       width:100%;
-      max-height:260px;
-      object-fit:cover;
+      max-height:360px;
+      object-fit:contain;
       object-position:center;
-      border-radius:22px;
+      border-radius:26px;
       display:block;
-      filter:drop-shadow(0 16px 42px rgba(0,0,0,.28));
+      background:rgba(255,255,255,.96);
+      filter:drop-shadow(0 18px 48px rgba(0,0,0,.30));
     }
-    .hero-logo-credit{
-      position:relative;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      margin-top:12px;
-      color:var(--muted);
-      font-size:13px;
-      letter-spacing:.3px;
-    }
-    .hero-logo-credit strong{color:#fff}
     .mark{
       width:44px;height:44px;border-radius:15px;display:grid;place-items:center;
       background:linear-gradient(135deg,var(--cyan),var(--blue));
@@ -105,9 +96,11 @@
     .btn-primary:hover,.btn:hover{transform:translateY(-2px)}
     .btn-ghost{background:rgba(255,255,255,.06);color:var(--text)}
     .hero{
-      max-width:1220px;margin:auto;padding:80px 22px 46px;
-      display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center;
+      max-width:1220px;margin:auto;padding:72px 22px 54px;
+      display:grid;grid-template-columns:.98fr .82fr;gap:42px;align-items:start;
+      position:relative;
     }
+    .hero-left{position:relative;z-index:3}
     .eyebrow{
       display:inline-flex;gap:9px;align-items:center;padding:8px 14px;border-radius:999px;
       background:rgba(62,231,255,.1);border:1px solid rgba(62,231,255,.22);color:#aef6ff;font-weight:850;font-size:14px
@@ -120,7 +113,9 @@
     .metric{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:20px;padding:16px}
     .metric strong{display:block;font-size:25px;color:#fff}.metric span{font-size:13px;color:var(--muted)}
     .hero-card{
-      position:relative;border-radius:38px;overflow:hidden;min-height:560px;background:#0c1728;box-shadow:var(--shadow);border:1px solid var(--line)
+      position:relative;border-radius:38px;overflow:hidden;min-height:560px;background:#0c1728;box-shadow:var(--shadow);border:1px solid var(--line);
+      margin-top:220px;
+      z-index:2;
     }
     .hero-card img{width:100%;height:100%;min-height:560px;object-fit:cover;display:block;filter:saturate(1.05) contrast(1.03)}
     .hero-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(5,9,20,.88))}
@@ -142,7 +137,7 @@
     .cta h2{font-size:clamp(34px,4vw,60px);margin:0 0 14px;line-height:1.08}.cta p{color:var(--muted);font-size:18px;max-width:760px;margin:0 auto 24px}
     footer{max-width:1220px;margin:auto;padding:36px 22px 60px;color:var(--muted);border-top:1px solid var(--line)}
     .mobile-cta{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:80;gap:10px;padding:10px;background:rgba(7,17,31,.88);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:999px}.mobile-cta .btn{flex:1;padding:12px 8px;font-size:13px}
-    @media(max-width:980px){.main-logo{height:44px;max-width:210px}.hero-logo-panel{margin-bottom:20px;padding:12px}.hero-logo{max-height:220px}.hero-logo-credit{flex-direction:column}.nav-links{display:none}.hero,.grid-3,.grid-2,.photo-strip,.figure-gallery{grid-template-columns:1fr}.wide-figure{grid-column:span 1}.metrics{grid-template-columns:repeat(2,1fr)}.research{grid-template-columns:1fr}.project{grid-template-columns:1fr}.hero-card,.hero-card img{min-height:430px}.mobile-cta{display:flex}}
+    @media(max-width:980px){.main-logo{height:44px;max-width:210px}.hero{grid-template-columns:1fr}.hero-logo-panel{width:100%;margin-bottom:20px;padding:8px}.hero-logo{max-height:260px}.hero-card{margin-top:18px}.nav-links{display:none}.hero,.grid-3,.grid-2,.photo-strip,.figure-gallery{grid-template-columns:1fr}.wide-figure{grid-column:span 1}.metrics{grid-template-columns:repeat(2,1fr)}.research{grid-template-columns:1fr}.project{grid-template-columns:1fr}.hero-card,.hero-card img{min-height:430px}.mobile-cta{display:flex}}
   </style>
 </head>
 <body>
@@ -160,13 +155,9 @@
 
   <main id="top">
     <section class="hero">
-      <div>
+      <div class="hero-left">
         <div class="hero-logo-panel">
           <img src="assets/logo/10_01_14.png" alt="LABZero world-class logo template wall" class="hero-logo">
-          <div class="hero-logo-credit">
-            <strong>LABZero Brand Identity System</strong>
-            <span>Soil Dynamics · Liquefaction · Site Investigation · Pile Foundation · Geo-Hazard Mitigation</span>
-          </div>
         </div>
         <span class="eyebrow">Analysis and Risk Mitigation for Geo-Hazards</span>
         <h1>From soil failure to <span class="gradient">urban resilience.</span></h1>
