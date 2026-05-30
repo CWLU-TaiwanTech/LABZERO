@@ -359,6 +359,79 @@
     .pub strong{color:#fff}
     .pub em{font-style:normal;color:var(--cyan)}
 
+    /* ===== Publication upload section ===== */
+    .publication-upload{
+      margin-top:32px;
+      display:grid;
+      grid-template-columns:340px 1fr;
+      gap:24px;
+      align-items:start;
+    }
+    .publication-upload-card{
+      border-radius:28px;
+      padding:28px;
+      background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+    .publication-upload-card h3{font-size:24px;margin:0 0 10px}
+    .publication-upload-card p{color:var(--muted);margin:0 0 18px;font-size:15px}
+    .publication-upload-card input[type="file"]{
+      display:block;
+      width:100%;
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(3,9,20,.52);
+      color:var(--text);
+      margin-bottom:14px;
+    }
+    .publication-upload-fields{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    .publication-upload-fields input{
+      width:100%;
+      border:1px solid var(--line);
+      background:rgba(3,9,20,.52);
+      color:var(--text);
+      border-radius:14px;
+      padding:12px 13px;
+      outline:none;
+      font:inherit;
+    }
+    .publication-upload-fields .full{grid-column:1/-1}
+    .publication-upload-list{
+      display:grid;
+      gap:14px;
+    }
+    .uploaded-publication{
+      padding:20px 22px;
+      border-radius:22px;
+      background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      transition:.25s ease;
+    }
+    .uploaded-publication:hover{
+      transform:translateY(-4px);
+      border-color:rgba(62,231,255,.45);
+      box-shadow:0 20px 50px rgba(0,0,0,.25);
+    }
+    .uploaded-publication h3{margin:0 0 8px;font-size:21px;line-height:1.35}
+    .uploaded-publication p{margin:0 0 12px;color:var(--muted);font-size:14px}
+    .uploaded-publication a{color:var(--cyan);font-weight:850}
+    .upload-help{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:13px;
+      border-left:3px solid var(--cyan);
+      padding:10px 12px;
+      background:rgba(62,231,255,.065);
+      border-radius:12px;
+    }
+
     .capability-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .legacy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 
@@ -429,6 +502,7 @@
       .metrics-band{grid-template-columns:repeat(2,1fr)}
       .metric{border-bottom:1px solid var(--line)}
       .research-grid{grid-template-columns:1fr 1fr}
+      .publication-upload{grid-template-columns:1fr}
       .project{grid-template-columns:1fr}
       .capability-grid,.legacy-grid,.cards-3{grid-template-columns:1fr}
       .mobile-cta{display:flex}
@@ -442,6 +516,7 @@
       .hero-logo-main{min-height:260px}
       .research-grid{grid-template-columns:1fr}
       .research-card{min-height:auto}
+      .publication-upload-fields{grid-template-columns:1fr}
       .metrics-band{grid-template-columns:1fr}
       .metric{border-right:0}
       .profile-photo img{height:360px}
@@ -624,6 +699,30 @@
           <div class="pub"><strong>Analytical estimation of liquefaction-induced building settlement</strong><br><em>Soil Dynamics and Earthquake Engineering, 2025</em></div>
           <div class="pub"><strong>An analytical model for liquefaction-induced manhole uplifting</strong><br><em>Soil Dynamics and Earthquake Engineering, 2024</em></div>
         </div>
+        <div class="publication-upload" id="publication-upload">
+          <div class="publication-upload-card">
+            <h3>Upload Publication PDF</h3>
+            <p>Add a full paper PDF to the publication list for preview or download. Existing website content remains unchanged.</p>
+            <input id="publicationPdfInput" type="file" accept="application/pdf">
+            <div class="publication-upload-fields">
+              <input class="full" id="publicationPdfTitle" placeholder="Publication title">
+              <input id="publicationPdfJournal" placeholder="Journal / Conference">
+              <input id="publicationPdfYear" placeholder="Year">
+            </div>
+            <div style="margin-top:14px">
+              <button class="btn btn-primary" id="addPublicationPdf" type="button">Add PDF to List</button>
+            </div>
+            <div class="upload-help">Demo mode uses a browser object URL. For a permanent GitHub Pages version, upload PDFs to <b>assets/publications/</b> and link them in this list.</div>
+          </div>
+
+          <div class="publication-upload-list" id="uploadedPublicationList">
+            <div class="uploaded-publication">
+              <h3>Full-paper PDF repository</h3>
+              <p>Upload a PDF above to add a new downloadable publication card here.</p>
+              <a href="assets/publications/building_settlement.pdf" target="_blank">Example PDF path →</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -716,6 +815,55 @@
     document.addEventListener('keydown', (event) => {
       if(event.key === 'Escape' && lightbox.classList.contains('active')){closeLightbox();}
     });
+
+    const publicationPdfInput = document.getElementById('publicationPdfInput');
+    const publicationPdfTitle = document.getElementById('publicationPdfTitle');
+    const publicationPdfJournal = document.getElementById('publicationPdfJournal');
+    const publicationPdfYear = document.getElementById('publicationPdfYear');
+    const addPublicationPdf = document.getElementById('addPublicationPdf');
+    const uploadedPublicationList = document.getElementById('uploadedPublicationList');
+
+    function escapePublicationHtml(text){
+      return String(text).replace(/[&<>'"]/g, char => ({
+        '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#039;', '"':'&quot;'
+      }[char]));
+    }
+
+    if(publicationPdfInput){
+      publicationPdfInput.addEventListener('change', () => {
+        const file = publicationPdfInput.files[0];
+        if(file && !publicationPdfTitle.value){
+          publicationPdfTitle.value = file.name.replace(/\.pdf$/i,'');
+        }
+      });
+    }
+
+    if(addPublicationPdf){
+      addPublicationPdf.addEventListener('click', () => {
+        const file = publicationPdfInput.files[0];
+        if(!file){
+          alert('Please choose a PDF file first.');
+          return;
+        }
+        if(file.type !== 'application/pdf'){
+          alert('Please upload a PDF file.');
+          return;
+        }
+        const url = URL.createObjectURL(file);
+        const title = publicationPdfTitle.value || file.name;
+        const journal = publicationPdfJournal.value || 'Uploaded publication PDF';
+        const year = publicationPdfYear.value || 'Year not specified';
+        const card = document.createElement('div');
+        card.className = 'uploaded-publication';
+        card.innerHTML = `
+          <h3>${escapePublicationHtml(title)}</h3>
+          <p>${escapePublicationHtml(journal)} · ${escapePublicationHtml(year)}</p>
+          <a href="${url}" target="_blank" download="${escapePublicationHtml(file.name)}">Open / Download PDF →</a>
+        `;
+        uploadedPublicationList.prepend(card);
+      });
+    }
+
   </script>
 
   <!--
@@ -729,6 +877,7 @@
   assets/research/research-topic-3.png
   assets/research/research-topic-4.png
   assets/research/research-topic-5.png
+  assets/publications/your-paper.pdf
   -->
 </body>
 </html>
